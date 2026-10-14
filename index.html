@@ -1,3 +1,154 @@
-<h1>Hola Mundo</h1>
+<
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Biblioteca digital de la Secretaría de Actas, Archivo y Estadística del SUPAUAQ.">
+  <title>Biblioteca digital | SUPAUAQ</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <!-- Encabezado inspirado en la navegación pública de SUPAUAQ.
+       Sustituye # por las rutas oficiales verificadas cuando corresponda. -->
+  <header class="site-header">
+    <a class="brand" href="https://supauaq.org/" aria-label="Ir al sitio oficial de SUPAUAQ">
+      <!-- Imagen pendiente: colocar el logotipo autorizado en assets/logo-supauaq.png -->
+      <span class="image-placeholder logo-placeholder">LOGOTIPO<br>SUPAUAQ</span>
+    </a>
 
-<h1>Adios Mundo</h1>
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-nav">
+      <span></span><span></span><span></span>
+      <span class="sr-only">Abrir menú</span>
+    </button>
+
+    <nav class="main-nav" id="main-nav" aria-label="Navegación principal">
+      <a href="https://supauaq.org/index.php">Inicio</a>
+      <div class="nav-dropdown">
+        <a href="https://supauaq.org/index.php/conocenos">Conócenos <span class="chevron">⌄</span></a>
+        <div class="dropdown-menu">
+          <a href="https://supauaq.org/index.php/conocenos/asamblea">Asamblea</a>
+          <a href="https://supauaq.org/index.php/conocenos/consejo-consultivo">Consejo Consultivo</a>
+          <a href="https://supauaq.org/index.php/conocenos/comite-ejecutivo">Comité Ejecutivo</a>
+        </div>
+      </div>
+      <a href="https://supauaq.org/index.php/tramites">Trámites</a>
+      <a href="http://transparencia.supauaq.org/" target="_blank" rel="noopener noreferrer">Transparencia</a>
+      <div class="nav-dropdown">
+        <a href="#documentos">De interés <span class="chevron">⌄</span></a>
+        <div class="dropdown-menu">
+          <a href="https://supauaq.org/images/CCT-2025-2027.pdf" target="_blank" rel="noopener noreferrer">Contrato Colectivo 2025–2027</a>
+          <a href="https://www.supauaq.org/images/estatutos.pdf" target="_blank" rel="noopener noreferrer">Estatutos SUPAUAQ</a>
+        </div>
+      </div>
+      <a href="https://supauaq.org/index.php/editorial-supauaq">Editorial SUPAUAQ</a>
+      <a href="https://supauaq.org/index.php/eventos/cena-baile-supauaq-2026">Eventos</a>
+      <a href="https://supauaq.org/index.php/contacto">Contacto</a>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Portada principal -->
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-inner">
+        <h1 id="hero-title">Biblioteca digital de la Secretaría de Actas, Archivo y Estadística</h1>
+        <p class="hero-subtitle">Esta biblioteca recopila los documentos más emblemáticos e históricos con los que cuenta la SAAC.</p>
+        <!-- Imagen pendiente: sustituir el bloque por la imagen/icono autorizado -->
+        <div class="image-placeholder hero-document" aria-label="Espacio reservado para imagen de documento">
+          <span class="document-icon" aria-hidden="true"></span>
+          <span class="placeholder-caption">Imagen pendiente</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Separador gráfico inspirado en la franja institucional de la referencia -->
+    <section class="section-banner" aria-label="Biblioteca digital">
+      <h2>Biblioteca digital</h2>
+      <div class="banner-ribbon" aria-hidden="true">
+        <span class="ribbon-red"></span>
+        <span class="ribbon-blue"></span>
+        <!-- Imagen pendiente: emblema institucional opcional -->
+        <span class="image-placeholder ribbon-logo">LOGO</span>
+      </div>
+    </section>
+
+    <!-- Catálogo -->
+    <section class="catalog" id="documentos" aria-label="Catálogo de documentos">
+      <div class="catalog-grid">
+        <article class="document-card">
+          <a class="card-link" href="#" aria-label="Abrir documento: Título del documento 1">
+            <div class="image-placeholder card-image">
+              <span class="document-icon" aria-hidden="true"></span>
+              <span class="placeholder-caption">Portada pendiente</span>
+            </div>
+            <h3>Título del documento</h3>
+            <p class="card-description">Descripción breve del documento histórico o institucional.</p>
+            <span class="card-action">Consultar documento <span aria-hidden="true">↗</span></span>
+          </a>
+        </article>
+
+        <article class="document-card">
+          <a class="card-link" href="#" aria-label="Abrir documento: Título del documento 2">
+            <div class="image-placeholder card-image">
+              <span class="document-icon" aria-hidden="true"></span>
+              <span class="placeholder-caption">Portada pendiente</span>
+            </div>
+            <h3>Título del documento</h3>
+            <p class="card-description">Descripción breve del documento histórico o institucional.</p>
+            <span class="card-action">Consultar documento <span aria-hidden="true">↗</span></span>
+          </a>
+        </article>
+
+        <article class="document-card">
+          <a class="card-link" href="#" aria-label="Abrir documento: Título del documento 3">
+            <div class="image-placeholder card-image">
+              <span class="document-icon" aria-hidden="true"></span>
+              <span class="placeholder-caption">Portada pendiente</span>
+            </div>
+            <h3>Título del documento</h3>
+            <p class="card-description">Descripción breve del documento histórico o institucional.</p>
+            <span class="card-action">Consultar documento <span aria-hidden="true">↗</span></span>
+          </a>
+        </article>
+
+        <!-- Duplica un article.document-card para agregar más documentos -->
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-brand">
+      <!-- Imagen pendiente: colocar el logotipo de pie autorizado -->
+      <span class="image-placeholder footer-logo">LOGOTIPO SUPAUAQ</span>
+    </div>
+    <p>© SUPAUAQ 1974–2026</p>
+    <p>Sindicato Único del Personal Académico de la Universidad Autónoma de Querétaro</p>
+    <a class="back-to-top" href="#top" onclick="window.scrollTo({top: 0, behavior: 'smooth'}); return false;">Volver arriba ↑</a>
+  </footer>
+
+  <script>
+    // Menú adaptable para pantallas pequeñas.
+    const menuToggle = document.querySelector('.menu-toggle');
+    const mainNav = document.querySelector('.main-nav');
+
+    menuToggle.addEventListener('click', () => {
+      const isOpen = menuToggle.getAttribute('aria-expanded') === 'true';
+      menuToggle.setAttribute('aria-expanded', String(!isOpen));
+      mainNav.classList.toggle('is-open', !isOpen);
+    });
+
+    // En móvil, los submenús se abren al pulsar su enlace principal.
+    document.querySelectorAll('.nav-dropdown > a').forEach(link => {
+      link.addEventListener('click', event => {
+        if (window.matchMedia('(max-width: 900px)').matches) {
+          const parent = link.parentElement;
+          if (parent.querySelector('.dropdown-menu')) {
+            event.preventDefault();
+            parent.classList.toggle('is-open');
+          }
+        }
+      });
+    });
+  </script>
+</body>
+</html>
