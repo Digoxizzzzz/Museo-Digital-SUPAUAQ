@@ -1,336 +1,437 @@
-/* Biblioteca digital SUPAUAQ — prototipo independiente*/
+/* ==========================================================================
+   Museo / Biblioteca Digital SUPAUAQ - Hoja de Estilos Principal
+   ========================================================================== */
 
 :root {
-  --navy: #15588c;
-  --blue: #79b5e7;
-  --blue-dark: #2d527e;
-  --red: #c51d35;
-  --purple: #594276;
-  --text: #171717;
-  --muted: #5f6670;
-  --white: #ffffff;
-  --page-width: 1320px;
-  --radius-card: 22px;
-  --shadow-card: 0 8px 24px rgba(21, 52, 80, .09);
+  --color-white: #ffffff;
+  --color-black: #000000;
+  --color-navy-dark: #103b66;
+  --color-navy-hover: #c51d35;
+  --color-hero-start: #1a3c6e;
+  --color-hero-mid: #5b2c6f;
+  --color-hero-end: #b81442;
+  --color-section-red: #d91424;
+  --color-card-bg: #7cb3e1;
+  --color-footer-crimson: #7a0c1e;
+  --max-width: 1280px;
+  --transition-base: 0.25s ease;
 }
 
-* { box-sizing: border-box; }
-html { scroll-behavior: smooth; }
-body {
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
   margin: 0;
-  color: var(--text);
-  background: var(--white);
-  font-family: Arial, Helvetica, sans-serif;
-  line-height: 1.5;
-}
-a { color: inherit; }
-.sr-only {
-  position: absolute;
-  width: 1px; height: 1px;
-  padding: 0; margin: -1px;
-  overflow: hidden; clip: rect(0, 0, 0, 0);
-  white-space: nowrap; border: 0;
+  padding: 0;
 }
 
-/* Encabezado */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Segoe UI', Roboto, Arial, Helvetica, sans-serif;
+  background-color: var(--color-white);
+  color: var(--color-black);
+  line-height: 1.5;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* ==========================================================================
+   1. Barra de Navegación (Header)
+   ========================================================================== */
+
 .site-header {
-  min-height: 80px;
-  padding: 10px clamp(20px, 4vw, 54px);
+  background-color: var(--color-white);
+  border-bottom: 1px solid #e6e9ef;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04);
+}
+
+.header-container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 12px 24px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 28px;
-  background: #fff;
-  border: 1px solid #e8e8e8;
-  position: relative;
-  z-index: 10;
+  gap: 20px;
 }
-.brand { display: flex; align-items: center; flex: 0 0 175px; text-decoration: none; }
-.logo-placeholder {
-  width: 165px;
-  min-height: 48px;
-  font-size: 10px;
-  letter-spacing: .06em;
+
+.brand-logo {
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+  flex-shrink: 0;
 }
-.image-placeholder {
+
+.brand-logo img {
+  height: 64px;
+  width: auto;
+  object-fit: contain;
+}
+
+.main-nav .nav-list {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.main-nav .nav-list a {
+  text-decoration: none;
+  color: var(--color-navy-dark);
+  font-size: 0.95rem;
+  font-weight: 600;
+  white-space: nowrap;
+  padding: 8px 4px;
+  transition: color var(--transition-base);
+}
+
+.main-nav .nav-list a:hover,
+.main-nav .nav-list a:focus-visible {
+  color: var(--color-navy-hover);
+}
+
+/* Botón Menú Hamburguesa (Móvil) */
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  width: 44px;
+  height: 44px;
+  background: transparent;
+  border: 1px solid #d0d7de;
+  border-radius: 6px;
+  cursor: pointer;
+  padding: 8px;
+}
+
+.hamburger-bar {
+  width: 24px;
+  height: 2.5px;
+  background-color: var(--color-navy-dark);
+  border-radius: 2px;
+  transition: transform var(--transition-base), opacity var(--transition-base);
+}
+
+.menu-toggle.open .hamburger-bar:nth-child(1) {
+  transform: translateY(7.5px) rotate(45deg);
+}
+
+.menu-toggle.open .hamburger-bar:nth-child(2) {
+  opacity: 0;
+}
+
+.menu-toggle.open .hamburger-bar:nth-child(3) {
+  transform: translateY(-7.5px) rotate(-45deg);
+}
+
+/* ==========================================================================
+   2. Banner Principal (Hero Section)
+   ========================================================================== */
+
+.hero-section {
+  background: linear-gradient(120deg, var(--color-hero-start) 0%, var(--color-hero-mid) 50%, var(--color-hero-end) 100%);
+  color: var(--color-white);
+  padding: 56px 24px 48px;
+  text-align: center;
+}
+
+.hero-content {
+  max-width: 960px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.hero-content h1 {
+  font-size: clamp(1.75rem, 3.2vw, 2.5rem);
+  font-weight: 700;
+  color: var(--color-white);
+  margin-bottom: 24px;
+  line-height: 1.25;
+}
+
+.hero-subtitle {
+  font-size: clamp(1.05rem, 1.8vw, 1.35rem);
+  font-weight: 600;
+  color: var(--color-white);
+  max-width: 780px;
+  margin-bottom: 36px;
+}
+
+.hero-icon-wrapper {
+  width: 170px;
+  height: 170px;
+  background-color: var(--color-white);
+  border-radius: 8px;
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-direction: column;
-  color: #454545;
-  background: rgba(255,255,255,.94);
-  border: 1px dashed rgba(45, 45, 45, .35);
-  text-align: center;
+  padding: 20px;
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.22);
 }
-.main-nav { display: flex; align-items: center; justify-content: flex-end; gap: clamp(12px, 1.7vw, 25px); }
-.main-nav > a, .nav-dropdown > a {
-  display: inline-flex;
-  align-items: center;
-  gap: 5px;
-  color: #164b7b;
-  text-decoration: none;
-  font-size: 14px;
-  white-space: nowrap;
-  padding: 10px 0;
-}
-.main-nav > a:hover, .nav-dropdown > a:hover { color: var(--red); }
-.nav-dropdown { position: relative; }
-.chevron { font-size: 16px; line-height: 1; }
-.dropdown-menu {
-  display: none;
-  position: absolute;
-  top: 100%; left: -12px;
-  min-width: 245px;
-  padding: 8px;
-  background: #fff;
-  border: 1px solid #e5e5e5;
-  border-radius: 5px;
-  box-shadow: 0 12px 25px rgba(0,0,0,.12);
-}
-.dropdown-menu a {
-  display: block;
-  padding: 10px 12px;
-  color: #164b7b;
-  text-decoration: none;
-  font-size: 13px;
-}
-.dropdown-menu a:hover { background: #f2f6fa; }
-.nav-dropdown:hover .dropdown-menu, .nav-dropdown:focus-within .dropdown-menu { display: block; }
-.menu-toggle { display: none; }
 
-/* Portada */
-.hero {
-  min-height: 395px;
-  color: #fff;
-  background: linear-gradient(112deg, #2e527f 0%, #594071 50%, #a01943 100%);
+.hero-doc-svg,
+.hero-icon-wrapper img {
+  width: 110px;
+  height: 110px;
+  object-fit: contain;
 }
-.hero-inner {
-  max-width: var(--page-width);
+
+/* ==========================================================================
+   3. Título de Sección
+   ========================================================================== */
+
+.section-title-bar {
+  background-color: var(--color-white);
+  padding: 28px 24px 12px;
+}
+
+.section-title-container {
+  max-width: var(--max-width);
   margin: 0 auto;
-  padding: 22px 32px 28px;
-  text-align: center;
-}
-.hero h1 {
-  margin: 0;
-  font-size: clamp(25px, 2.5vw, 34px);
-  line-height: 1.25;
-  font-weight: 700;
   text-align: left;
 }
-.hero-subtitle {
-  margin: 64px 0 20px;
-  font-size: clamp(17px, 1.7vw, 21px);
+
+.section-title-container h2 {
+  color: var(--color-section-red);
+  font-size: clamp(1.6rem, 2.5vw, 2.1rem);
   font-weight: 700;
-}
-.hero-document {
-  width: 176px;
-  height: 177px;
-  margin: 0 auto;
-  border: 0;
-}
-.document-icon {
-  display: block;
-  width: 72px;
-  height: 88px;
-  position: relative;
-  border: 7px solid #050505;
-  background: #fff;
-}
-.document-icon::before {
-  content: "";
-  position: absolute;
-  top: -7px; right: -7px;
-  width: 28px; height: 28px;
-  background: #fff;
-  border-left: 7px solid #050505;
-  border-bottom: 7px solid #050505;
-  clip-path: polygon(0 0, 100% 100%, 0 100%);
-}
-.document-icon::after {
-  content: "";
-  position: absolute;
-  left: 9px; right: 9px; top: 31px;
-  height: 6px;
-  background: #050505;
-  box-shadow: 0 15px 0 #050505, 0 30px 0 #050505;
-}
-.placeholder-caption { margin-top: 8px; font-size: 10px; color: #686868; }
-
-/* Cinta de sección */
-.section-banner {
-  min-height: 75px;
-  display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
-  position: relative;
-  overflow: hidden;
-  padding: 4px clamp(24px, 5vw, 70px);
-  background: #fff;
-}
-.section-banner h2 {
-  position: relative;
-  z-index: 1;
-  margin: 0;
-  color: #f20e16;
-  font-size: clamp(23px, 2.5vw, 28px);
-  line-height: 1.4;
-}
-.banner-ribbon {
-  position: absolute;
-  right: 5%;
-  top: 0;
-  width: 290px;
-  height: 58px;
-  background: #15588c;
-  overflow: hidden;
-}
-.ribbon-red {
-  position: absolute;
-  inset: 0 auto 0 0;
-  width: 75px;
-  background: #e20d20;
-  clip-path: polygon(0 0, 30% 0, 100% 100%, 70% 100%);
-}
-.ribbon-blue {
-  position: absolute;
-  inset: 0 auto 0 36px;
-  width: 100px;
-  background: rgba(0, 71, 124, .55);
-  clip-path: polygon(0 0, 45% 0, 100% 100%, 55% 100%);
-}
-.ribbon-logo {
-  position: absolute;
-  right: 12px; bottom: 4px;
-  width: 42px; height: 43px;
-  color: white;
-  background: transparent;
-  border-color: rgba(255,255,255,.5);
-  font-size: 7px;
+  letter-spacing: -0.01em;
 }
 
-/* Catálogo */
-.catalog { padding: 42px clamp(24px, 6.8vw, 90px) 76px; }
-.catalog-grid {
-  width: min(100%, 1200px);
+/* ==========================================================================
+   4. Galería de Documentos (Grid)
+   ========================================================================== */
+
+.documents-section {
+  background-color: var(--color-white);
+  padding: 24px 24px 72px;
+}
+
+.documents-grid {
+  max-width: var(--max-width);
   margin: 0 auto;
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 28px;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
 }
+
 .document-card {
-  min-width: 0;
-  overflow: hidden;
-  background: var(--blue);
-  border-radius: var(--radius-card) var(--radius-card) 4px 4px;
-  text-align: center;
-  transition: transform .2s ease, box-shadow .2s ease;
-}
-.document-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-card); }
-.card-link {
+  background-color: var(--color-card-bg);
+  border-radius: 20px;
+  padding: 32px 24px;
   display: flex;
-  height: 100%;
   flex-direction: column;
   align-items: center;
-  padding: 46px 22px 28px;
-  color: #050505;
-  text-decoration: none;
-}
-.card-image {
-  width: min(100%, 225px);
-  height: 178px;
-  flex: 0 0 auto;
-  border: 0;
-}
-.card-image .document-icon { width: 120px; height: 145px; border-width: 8px; }
-.card-image .document-icon::before {
-  top: -8px; right: -8px;
-  width: 47px; height: 47px;
-  border-left-width: 8px; border-bottom-width: 8px;
-}
-.card-image .document-icon::after {
-  left: 17px; right: 17px; top: 42px;
-  height: 8px;
-  box-shadow: 0 22px 0 #050505, 0 44px 0 #050505, 0 66px 0 #050505;
-}
-.card-image .placeholder-caption { display: none; }
-.document-card h3 { margin: 20px 0 8px; font-size: 25px; line-height: 1.25; }
-.card-description { max-width: 290px; margin: 0 auto 18px; font-size: 14px; }
-.card-action { margin-top: auto; font-weight: 700; font-size: 14px; color: #143f66; }
-.card-action span { padding-left: 4px; }
-
-/* Pie de página */
-.site-footer {
-  padding: 32px 24px;
   text-align: center;
-  color: #fff;
-  background: #164f7e;
-  font-size: 13px;
+  box-shadow: 0 6px 18px rgba(16, 59, 102, 0.12);
+  transition: transform var(--transition-base), box-shadow var(--transition-base);
 }
-.footer-logo {
-  width: 160px; min-height: 50px;
-  margin: 0 auto 16px;
-  color: #fff;
-  background: transparent;
-  border-color: rgba(255,255,255,.45);
-  font-size: 10px;
-}
-.site-footer p { margin: 5px 0; }
-.back-to-top { display: inline-block; margin-top: 14px; color: #fff; }
 
-/* Adaptación a tablet y móvil */
-@media (max-width: 1100px) {
-  .site-header { gap: 16px; padding-inline: 22px; }
-  .brand { flex-basis: 140px; }
-  .logo-placeholder { width: 135px; }
-  .main-nav { gap: 12px; }
-  .main-nav > a, .nav-dropdown > a { font-size: 12px; }
+.document-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 26px rgba(16, 59, 102, 0.2);
 }
-@media (max-width: 900px) {
-  .site-header { min-height: 74px; flex-wrap: wrap; }
+
+/* Contenedor cuadrado blanco superior (soporta SVG o imagen prerenderizada del PDF) */
+.card-preview-box {
+  width: 185px;
+  height: 185px;
+  background-color: var(--color-white);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 18px;
+  margin-bottom: 22px;
+  overflow: hidden;
+}
+
+.card-doc-svg {
+  width: 115px;
+  height: 130px;
+}
+
+.card-preview-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+.card-title {
+  color: var(--color-black);
+  font-size: 1.45rem;
+  font-weight: 700;
+  margin-bottom: 14px;
+}
+
+.card-details {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 20px;
+}
+
+.card-details p {
+  color: var(--color-black);
+  font-size: 1rem;
+  margin: 0;
+}
+
+.card-pdf-link {
+  margin-top: auto;
+  display: inline-block;
+  background-color: var(--color-navy-dark);
+  color: var(--color-white);
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 600;
+  padding: 10px 20px;
+  border-radius: 8px;
+  transition: background-color var(--transition-base);
+}
+
+.card-pdf-link:hover,
+.card-pdf-link:focus-visible {
+  background-color: var(--color-section-red);
+}
+
+/* ==========================================================================
+   5. Pie de Página (Footer)
+   ========================================================================== */
+
+.site-footer {
+  background-color: var(--color-footer-crimson);
+  color: var(--color-white);
+  padding: 28px 24px;
+}
+
+.footer-container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.footer-brand img {
+  max-height: 72px;
+  width: auto;
+  object-fit: contain;
+}
+
+.footer-info {
+  text-align: right;
+  font-size: 0.92rem;
+}
+
+.footer-org {
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.footer-copy {
+  opacity: 0.9;
+  font-size: 0.85rem;
+}
+
+/* ==========================================================================
+   Diseño Responsivo (Tablets y Móviles)
+   ========================================================================== */
+
+/* Tablets (2 columnas en la galería y menú colapsable) */
+@media (max-width: 992px) {
   .menu-toggle {
-    display: flex; flex-direction: column; gap: 5px;
-    padding: 10px; border: 1px solid #d5dce2; border-radius: 6px;
-    background: white; cursor: pointer;
+    display: flex;
   }
-  .menu-toggle > span:not(.sr-only) { display: block; width: 23px; height: 2px; background: #164b7b; }
+
+  .header-container {
+    flex-wrap: wrap;
+  }
+
   .main-nav {
-    display: none; width: 100%;
-    flex-direction: column; align-items: stretch; gap: 0;
-    padding: 8px 0 12px;
+    display: none;
+    width: 100%;
+    padding-top: 12px;
+    border-top: 1px solid #eef1f5;
   }
-  .main-nav.is-open { display: flex; }
-  .main-nav > a, .nav-dropdown > a { padding: 11px 5px; font-size: 14px; }
-  .dropdown-menu {
-    display: none; position: static; min-width: 0;
-    box-shadow: none; border: 0; border-left: 2px solid #dce6ef;
-    border-radius: 0; margin-left: 8px;
+
+  .main-nav.active {
+    display: block;
   }
-  .nav-dropdown:hover .dropdown-menu { display: none; }
-  .nav-dropdown.is-open .dropdown-menu,
-  .nav-dropdown:focus-within .dropdown-menu { display: block; }
-  .hero { min-height: 360px; }
-  .hero-subtitle { margin-top: 48px; }
-  .catalog-grid { gap: 18px; }
-  .card-link { padding: 28px 14px 22px; }
-  .card-image { height: 150px; }
-  .card-image .document-icon { transform: scale(.85); }
-  .document-card h3 { font-size: 20px; }
+
+  .main-nav .nav-list {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+  }
+
+  .main-nav .nav-list li {
+    width: 100%;
+  }
+
+  .main-nav .nav-list a {
+    display: block;
+    width: 100%;
+    padding: 10px 8px;
+  }
+
+  .documents-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
 }
+
+/* Móviles (1 columna en la galería y ajustes de espaciado) */
 @media (max-width: 640px) {
-  .hero-inner { padding: 25px 20px 30px; }
-  .hero h1 { text-align: center; font-size: 25px; }
-  .hero-subtitle { margin-top: 35px; font-size: 17px; }
-  .hero-document { width: 150px; height: 150px; }
-  .section-banner { min-height: 66px; padding-inline: 20px; }
-  .section-banner h2 { font-size: 22px; }
-  .banner-ribbon { right: -140px; opacity: .9; }
-  .catalog { padding: 28px 22px 48px; }
-  .catalog-grid { grid-template-columns: 1fr; gap: 22px; max-width: 360px; }
-  .card-link { padding: 30px 24px 25px; }
-  .card-image { height: 170px; }
-  .document-card h3 { font-size: 23px; }
-}
-@media (prefers-reduced-motion: reduce) {
-  html { scroll-behavior: auto; }
-  *, *::before, *::after { transition-duration: .01ms !important; }
+  .hero-section {
+    padding: 40px 18px 36px;
+  }
+
+  .hero-icon-wrapper {
+    width: 145px;
+    height: 145px;
+  }
+
+  .documents-grid {
+    grid-template-columns: 1fr;
+    gap: 22px;
+  }
+
+  .document-card {
+    padding: 28px 20px;
+  }
+
+  .footer-container {
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+  }
+
+  .footer-info {
+    text-align: center;
+  }
 }

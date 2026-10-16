@@ -1,153 +1,231 @@
-<
 <!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Biblioteca digital de la Secretaría de Actas, Archivo y Estadística del SUPAUAQ.">
-  <title>Biblioteca digital | SUPAUAQ</title>
-  <link rel="stylesheet" href="css/style.css">
+  <meta name="description" content="Museo y Biblioteca Digital de la Secretaría de Actas, Archivos y Estadística del SUPAUAQ.">
+  <title>Biblioteca Digital | SUPAUAQ</title>
+  <link rel="stylesheet" href="style.css">
 </head>
-<body>
-  <!-- Encabezado inspirado en la navegación pública de SUPAUAQ.
-       Sustituye # por las rutas oficiales verificadas cuando corresponda. -->
+<body id="top">
+
+  <!-- 1. Barra de Navegación (Header) -->
   <header class="site-header">
-    <a class="brand" href="https://supauaq.org/" aria-label="Ir al sitio oficial de SUPAUAQ">
-      <!-- Imagen pendiente: colocar el logotipo autorizado en assets/logo-supauaq.png -->
-      <span class="image-placeholder logo-placeholder">LOGOTIPO<br>SUPAUAQ</span>
-    </a>
+    <div class="header-container">
+      <a href="https://supauaq.org/" class="brand-logo" aria-label="Inicio SUPAUAQ">
+        <img src="assets/logo-supauaq.png" alt="Logo SUPAUAQ">
+      </a>
 
-    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-nav">
-      <span></span><span></span><span></span>
-      <span class="sr-only">Abrir menú</span>
-    </button>
+      <button class="menu-toggle" id="menuToggle" type="button" aria-label="Abrir menú de navegación" aria-expanded="false" aria-controls="mainNav">
+        <span class="hamburger-bar"></span>
+        <span class="hamburger-bar"></span>
+        <span class="hamburger-bar"></span>
+      </button>
 
-    <nav class="main-nav" id="main-nav" aria-label="Navegación principal">
-      <a href="https://supauaq.org/index.php">Inicio</a>
-      <div class="nav-dropdown">
-        <a href="https://supauaq.org/index.php/conocenos">Conócenos <span class="chevron">⌄</span></a>
-        <div class="dropdown-menu">
-          <a href="https://supauaq.org/index.php/conocenos/asamblea">Asamblea</a>
-          <a href="https://supauaq.org/index.php/conocenos/consejo-consultivo">Consejo Consultivo</a>
-          <a href="https://supauaq.org/index.php/conocenos/comite-ejecutivo">Comité Ejecutivo</a>
-        </div>
-      </div>
-      <a href="https://supauaq.org/index.php/tramites">Trámites</a>
-      <a href="http://transparencia.supauaq.org/" target="_blank" rel="noopener noreferrer">Transparencia</a>
-      <div class="nav-dropdown">
-        <a href="#documentos">De interés <span class="chevron">⌄</span></a>
-        <div class="dropdown-menu">
-          <a href="https://supauaq.org/images/CCT-2025-2027.pdf" target="_blank" rel="noopener noreferrer">Contrato Colectivo 2025–2027</a>
-          <a href="https://www.supauaq.org/images/estatutos.pdf" target="_blank" rel="noopener noreferrer">Estatutos SUPAUAQ</a>
-        </div>
-      </div>
-      <a href="https://supauaq.org/index.php/editorial-supauaq">Editorial SUPAUAQ</a>
-      <a href="https://supauaq.org/index.php/eventos/cena-baile-supauaq-2026">Eventos</a>
-      <a href="https://supauaq.org/index.php/contacto">Contacto</a>
-    </nav>
+      <nav class="main-nav" id="mainNav" aria-label="Navegación principal">
+        <ul class="nav-list">
+          <li><a href="https://supauaq.org/index.php">Inicio</a></li>
+          <li><a href="https://supauaq.org/index.php/conocenos">Conócenos</a></li>
+          <li><a href="https://supauaq.org/index.php/tramites">Trámites</a></li>
+          <li><a href="http://transparencia.supauaq.org/" target="_blank" rel="noopener noreferrer">Transparencia</a></li>
+          <li><a href="#galeria-documentos">De interés</a></li>
+          <li><a href="https://supauaq.org/index.php/editorial-supauaq">Editorial SUPAUAQ</a></li>
+          <li><a href="https://supauaq.org/index.php/eventos/cena-baile-supauaq-2026">Eventos</a></li>
+          <li><a href="https://supauaq.org/index.php/contacto">Contacto</a></li>
+        </ul>
+      </nav>
+    </div>
   </header>
 
   <main>
-    <!-- Portada principal -->
-    <section class="hero" aria-labelledby="hero-title">
-      <div class="hero-inner">
-        <h1 id="hero-title">Biblioteca digital de la Secretaría de Actas, Archivo y Estadística</h1>
-        <p class="hero-subtitle">Esta biblioteca recopila los documentos más emblemáticos e históricos con los que cuenta la SAAC.</p>
-        <!-- Imagen pendiente: sustituir el bloque por la imagen/icono autorizado -->
-        <div class="image-placeholder hero-document" aria-label="Espacio reservado para imagen de documento">
-          <span class="document-icon" aria-hidden="true"></span>
-          <span class="placeholder-caption">Imagen pendiente</span>
+    <!-- 2. Banner Principal (Hero Section) -->
+    <section class="hero-section" aria-labelledby="hero-heading">
+      <div class="hero-content">
+        <h1 id="hero-heading">Biblioteca digital de La Secretaria de Actas, archivos y estadistica</h1>
+        <p class="hero-subtitle">Esta biblioteca recopila los documentos mas emblematicos e historicos de que cuenta la SAAC</p>
+
+        <div class="hero-icon-wrapper" aria-hidden="true">
+          <svg class="hero-doc-svg" viewBox="0 0 120 140" xmlns="http://www.w3.org/2000/svg">
+            <path d="M20 8 H76 L104 36 V132 H20 Z" fill="#ffffff" stroke="#0a0a0a" stroke-width="8" stroke-linejoin="round"/>
+            <path d="M74 8 V38 H104" fill="#ffffff" stroke="#0a0a0a" stroke-width="8" stroke-linejoin="round"/>
+            <line x1="34" y1="58" x2="88" y2="58" stroke="#0a0a0a" stroke-width="8" stroke-linecap="round"/>
+            <line x1="34" y1="80" x2="88" y2="80" stroke="#0a0a0a" stroke-width="8" stroke-linecap="round"/>
+            <line x1="34" y1="102" x2="72" y2="102" stroke="#0a0a0a" stroke-width="8" stroke-linecap="round"/>
+          </svg>
         </div>
       </div>
     </section>
 
-    <!-- Separador gráfico inspirado en la franja institucional de la referencia -->
-    <section class="section-banner" aria-label="Biblioteca digital">
-      <h2>Biblioteca digital</h2>
-      <div class="banner-ribbon" aria-hidden="true">
-        <span class="ribbon-red"></span>
-        <span class="ribbon-blue"></span>
-        <!-- Imagen pendiente: emblema institucional opcional -->
-        <span class="image-placeholder ribbon-logo">LOGO</span>
+    <!-- 3. Título de Sección -->
+    <section class="section-title-bar" aria-label="Título de sección">
+      <div class="section-title-container">
+        <h2>Biblioteca digital</h2>
       </div>
     </section>
 
-    <!-- Catálogo -->
-    <section class="catalog" id="documentos" aria-label="Catálogo de documentos">
-      <div class="catalog-grid">
+    <!-- 4. Galería de Documentos (Grid) -->
+    <section class="documents-section" id="galeria-documentos" aria-label="Galería de documentos históricos">
+      <div class="documents-grid">
+
+        <!-- Tarjeta 1 -->
         <article class="document-card">
-          <a class="card-link" href="#" aria-label="Abrir documento: Título del documento 1">
-            <div class="image-placeholder card-image">
-              <span class="document-icon" aria-hidden="true"></span>
-              <span class="placeholder-caption">Portada pendiente</span>
-            </div>
-            <h3>Título del documento</h3>
-            <p class="card-description">Descripción breve del documento histórico o institucional.</p>
-            <span class="card-action">Consultar documento <span aria-hidden="true">↗</span></span>
+          <div class="card-preview-box">
+            <!-- En producción: reemplazar el SVG por <img src="assets/previews/doc-1.jpg" alt="Vista previa del documento" class="card-preview-img"> -->
+            <svg class="card-doc-svg" viewBox="0 0 120 140" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <path d="M20 8 H76 L104 36 V132 H20 Z" fill="#ffffff" stroke="#000000" stroke-width="8" stroke-linejoin="round"/>
+              <path d="M74 8 V38 H104" fill="none" stroke="#000000" stroke-width="8" stroke-linejoin="round"/>
+              <line x1="34" y1="56" x2="88" y2="56" stroke="#000000" stroke-width="8" stroke-linecap="round"/>
+              <line x1="34" y1="78" x2="88" y2="78" stroke="#000000" stroke-width="8" stroke-linecap="round"/>
+              <line x1="34" y1="100" x2="88" y2="100" stroke="#000000" stroke-width="8" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <h3 class="card-title">Título</h3>
+          <div class="card-details">
+            <p>Contenido del archivo</p>
+            <p>Año correspondiente</p>
+            <p>Datos importantes</p>
+          </div>
+          <a href="#" class="card-pdf-link" target="_blank" rel="noopener noreferrer" aria-label="Consultar documento PDF">
+            Ver documento PDF
           </a>
         </article>
 
+        <!-- Tarjeta 2 -->
         <article class="document-card">
-          <a class="card-link" href="#" aria-label="Abrir documento: Título del documento 2">
-            <div class="image-placeholder card-image">
-              <span class="document-icon" aria-hidden="true"></span>
-              <span class="placeholder-caption">Portada pendiente</span>
-            </div>
-            <h3>Título del documento</h3>
-            <p class="card-description">Descripción breve del documento histórico o institucional.</p>
-            <span class="card-action">Consultar documento <span aria-hidden="true">↗</span></span>
+          <div class="card-preview-box">
+            <svg class="card-doc-svg" viewBox="0 0 120 140" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <path d="M20 8 H76 L104 36 V132 H20 Z" fill="#ffffff" stroke="#000000" stroke-width="8" stroke-linejoin="round"/>
+              <path d="M74 8 V38 H104" fill="none" stroke="#000000" stroke-width="8" stroke-linejoin="round"/>
+              <line x1="34" y1="56" x2="88" y2="56" stroke="#000000" stroke-width="8" stroke-linecap="round"/>
+              <line x1="34" y1="78" x2="88" y2="78" stroke="#000000" stroke-width="8" stroke-linecap="round"/>
+              <line x1="34" y1="100" x2="88" y2="100" stroke="#000000" stroke-width="8" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <h3 class="card-title">Título</h3>
+          <div class="card-details">
+            <p>Contenido del archivo</p>
+            <p>Año correspondiente</p>
+            <p>Datos importantes</p>
+          </div>
+          <a href="#" class="card-pdf-link" target="_blank" rel="noopener noreferrer" aria-label="Consultar documento PDF">
+            Ver documento PDF
           </a>
         </article>
 
+        <!-- Tarjeta 3 -->
         <article class="document-card">
-          <a class="card-link" href="#" aria-label="Abrir documento: Título del documento 3">
-            <div class="image-placeholder card-image">
-              <span class="document-icon" aria-hidden="true"></span>
-              <span class="placeholder-caption">Portada pendiente</span>
-            </div>
-            <h3>Título del documento</h3>
-            <p class="card-description">Descripción breve del documento histórico o institucional.</p>
-            <span class="card-action">Consultar documento <span aria-hidden="true">↗</span></span>
+          <div class="card-preview-box">
+            <svg class="card-doc-svg" viewBox="0 0 120 140" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <path d="M20 8 H76 L104 36 V132 H20 Z" fill="#ffffff" stroke="#000000" stroke-width="8" stroke-linejoin="round"/>
+              <path d="M74 8 V38 H104" fill="none" stroke="#000000" stroke-width="8" stroke-linejoin="round"/>
+              <line x1="34" y1="56" x2="88" y2="56" stroke="#000000" stroke-width="8" stroke-linecap="round"/>
+              <line x1="34" y1="78" x2="88" y2="78" stroke="#000000" stroke-width="8" stroke-linecap="round"/>
+              <line x1="34" y1="100" x2="88" y2="100" stroke="#000000" stroke-width="8" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <h3 class="card-title">Título</h3>
+          <div class="card-details">
+            <p>Contenido del archivo</p>
+            <p>Año correspondiente</p>
+            <p>Datos importantes</p>
+          </div>
+          <a href="#" class="card-pdf-link" target="_blank" rel="noopener noreferrer" aria-label="Consultar documento PDF">
+            Ver documento PDF
           </a>
         </article>
 
-        <!-- Duplica un article.document-card para agregar más documentos -->
+        <!-- Tarjeta 4 -->
+        <article class="document-card">
+          <div class="card-preview-box">
+            <svg class="card-doc-svg" viewBox="0 0 120 140" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <path d="M20 8 H76 L104 36 V132 H20 Z" fill="#ffffff" stroke="#000000" stroke-width="8" stroke-linejoin="round"/>
+              <path d="M74 8 V38 H104" fill="none" stroke="#000000" stroke-width="8" stroke-linejoin="round"/>
+              <line x1="34" y1="56" x2="88" y2="56" stroke="#000000" stroke-width="8" stroke-linecap="round"/>
+              <line x1="34" y1="78" x2="88" y2="78" stroke="#000000" stroke-width="8" stroke-linecap="round"/>
+              <line x1="34" y1="100" x2="88" y2="100" stroke="#000000" stroke-width="8" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <h3 class="card-title">Título</h3>
+          <div class="card-details">
+            <p>Contenido del archivo</p>
+            <p>Año correspondiente</p>
+            <p>Datos importantes</p>
+          </div>
+          <a href="#" class="card-pdf-link" target="_blank" rel="noopener noreferrer" aria-label="Consultar documento PDF">
+            Ver documento PDF
+          </a>
+        </article>
+
+        <!-- Tarjeta 5 -->
+        <article class="document-card">
+          <div class="card-preview-box">
+            <svg class="card-doc-svg" viewBox="0 0 120 140" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <path d="M20 8 H76 L104 36 V132 H20 Z" fill="#ffffff" stroke="#000000" stroke-width="8" stroke-linejoin="round"/>
+              <path d="M74 8 V38 H104" fill="none" stroke="#000000" stroke-width="8" stroke-linejoin="round"/>
+              <line x1="34" y1="56" x2="88" y2="56" stroke="#000000" stroke-width="8" stroke-linecap="round"/>
+              <line x1="34" y1="78" x2="88" y2="78" stroke="#000000" stroke-width="8" stroke-linecap="round"/>
+              <line x1="34" y1="100" x2="88" y2="100" stroke="#000000" stroke-width="8" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <h3 class="card-title">Título</h3>
+          <div class="card-details">
+            <p>Contenido del archivo</p>
+            <p>Año correspondiente</p>
+            <p>Datos importantes</p>
+          </div>
+          <a href="#" class="card-pdf-link" target="_blank" rel="noopener noreferrer" aria-label="Consultar documento PDF">
+            Ver documento PDF
+          </a>
+        </article>
+
+        <!-- Tarjeta 6 -->
+        <article class="document-card">
+          <div class="card-preview-box">
+            <svg class="card-doc-svg" viewBox="0 0 120 140" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <path d="M20 8 H76 L104 36 V132 H20 Z" fill="#ffffff" stroke="#000000" stroke-width="8" stroke-linejoin="round"/>
+              <path d="M74 8 V38 H104" fill="none" stroke="#000000" stroke-width="8" stroke-linejoin="round"/>
+              <line x1="34" y1="56" x2="88" y2="56" stroke="#000000" stroke-width="8" stroke-linecap="round"/>
+              <line x1="34" y1="78" x2="88" y2="78" stroke="#000000" stroke-width="8" stroke-linecap="round"/>
+              <line x1="34" y1="100" x2="88" y2="100" stroke="#000000" stroke-width="8" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <h3 class="card-title">Título</h3>
+          <div class="card-details">
+            <p>Contenido del archivo</p>
+            <p>Año correspondiente</p>
+            <p>Datos importantes</p>
+          </div>
+          <a href="#" class="card-pdf-link" target="_blank" rel="noopener noreferrer" aria-label="Consultar documento PDF">
+            Ver documento PDF
+          </a>
+        </article>
+
       </div>
     </section>
   </main>
 
+  <!-- 5. Pie de página (Footer) -->
   <footer class="site-footer">
-    <div class="footer-brand">
-      <!-- Imagen pendiente: colocar el logotipo de pie autorizado -->
-      <span class="image-placeholder footer-logo">LOGOTIPO SUPAUAQ</span>
+    <div class="footer-container">
+      <div class="footer-brand">
+        <img src="assets/supauaq-footer.png" alt="Logo Sindicato SUPAUAQ">
+      </div>
+      <div class="footer-info">
+        <p class="footer-org">Sindicato Único del Personal Académico de la Universidad Autónoma de Querétaro</p>
+        <p class="footer-copy">© SUPAUAQ — Secretaría de Actas, Archivos y Estadística</p>
+      </div>
     </div>
-    <p>© SUPAUAQ 1974–2026</p>
-    <p>Sindicato Único del Personal Académico de la Universidad Autónoma de Querétaro</p>
-    <a class="back-to-top" href="#top" onclick="window.scrollTo({top: 0, behavior: 'smooth'}); return false;">Volver arriba ↑</a>
   </footer>
 
   <script>
-    // Menú adaptable para pantallas pequeñas.
-    const menuToggle = document.querySelector('.menu-toggle');
-    const mainNav = document.querySelector('.main-nav');
+    const menuToggle = document.getElementById('menuToggle');
+    const mainNav = document.getElementById('mainNav');
 
     menuToggle.addEventListener('click', () => {
-      const isOpen = menuToggle.getAttribute('aria-expanded') === 'true';
-      menuToggle.setAttribute('aria-expanded', String(!isOpen));
-      mainNav.classList.toggle('is-open', !isOpen);
-    });
-
-    // En móvil, los submenús se abren al pulsar su enlace principal.
-    document.querySelectorAll('.nav-dropdown > a').forEach(link => {
-      link.addEventListener('click', event => {
-        if (window.matchMedia('(max-width: 900px)').matches) {
-          const parent = link.parentElement;
-          if (parent.querySelector('.dropdown-menu')) {
-            event.preventDefault();
-            parent.classList.toggle('is-open');
-          }
-        }
-      });
+      const isExpanded = menuToggle.getAttribute('aria-expanded') === 'true';
+      menuToggle.setAttribute('aria-expanded', String(!isExpanded));
+      mainNav.classList.toggle('active');
+      menuToggle.classList.toggle('open');
     });
   </script>
 </body>
