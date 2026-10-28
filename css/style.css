@@ -15,9 +15,7 @@
   --color-footer-crimson: #7a0c1e;
   --max-width: 1280px;
   --transition-base: 0.25s ease;
-}
-
-*,
+}*,
 *::before,
 *::after {
   box-sizing: border-box;
@@ -238,6 +236,14 @@ img {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 32px;
+}
+
+.sin-documentos {
+  grid-column: 1 / -1;
+  text-align: center;
+  color: var(--color-navy-dark);
+  font-size: 1.15rem;
+  padding: 48px 24px;
 }
 
 .document-card {

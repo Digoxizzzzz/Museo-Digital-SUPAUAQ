@@ -50,99 +50,10 @@
       </div>
     </section>
 
-    <!-- 4. Galería de Documentos (Grid) -->
+    <!-- 4. Galería de Documentos (Grid generado automáticamente desde JSON) -->
     <section class="documents-section" id="galeria-documentos" aria-label="Galería de documentos históricos">
-      <div class="documents-grid">
-        <!-- Tarjeta 1 -->
-        <article class="document-card">
-          <div class="card-preview-box" role="button" tabindex="0" aria-label="Abrir documento en visor">
-            <canvas class="card-preview-canvas" role="img" aria-label="Vista previa de la primera página del documento"></canvas>
-          </div>
-          <h3 class="card-title">Registro de SUPAUAQ en el IMSS</h3>
-          <div class="card-details">
-            <p>Registro del sindicato en el IMSS</p>
-            <p>1975</p>
-            <p>Contiene el proceso y constancias de la affiliación</p>
-          </div>
-          <a href="pdf/registro-imss.pdf" class="card-pdf-link" target="_blank" rel="noopener noreferrer" aria-label="Consultar documento PDF">
-            Ver documento PDF
-          </a>
-        </article>
-        <!-- Tarjeta 2 -->
-        <article class="document-card">
-          <div class="card-preview-box" role="button" tabindex="0" aria-label="Abrir documento en visor">
-            <canvas class="card-preview-canvas" role="img" aria-label="Vista previa de la primera página del documento"></canvas>
-          </div>
-          <h3 class="card-title">Selección de plazas</h3>
-          <div class="card-details">
-            <p>Proceso de selección de plazas SUPAUAQ</p>
-            <p>6 de Octubre 2004</p>
-            <p>Requerimientos y consideraciones para el proceso de selección</p>
-          </div>
-          <a href="pdf/seleccion-plazas.pdf" class="card-pdf-link" target="_blank" rel="noopener noreferrer" aria-label="Consultar documento PDF">
-            Ver documento PDF
-          </a>
-        </article>
-        <!-- Tarjeta 3 -->
-        <article class="document-card">
-          <div class="card-preview-box" role="button" tabindex="0" aria-label="Abrir documento en visor">
-            <canvas class="card-preview-canvas" role="img" aria-label="Vista previa de la primera página del documento"></canvas>
-          </div>
-          <h3 class="card-title">Revisión de contrato colectivo</h3>
-          <div class="card-details">
-            <p>Revisión del contrato colectivo de trabajo</p>
-            <p>13 de febrero 2017</p>
-            <p>Modificaciones y actualizaciones al contrato</p>
-          </div>
-          <a href="pdf/revision-contrato-colectivo.pdf" class="card-pdf-link" target="_blank" rel="noopener noreferrer" aria-label="Consultar documento PDF">
-            Ver documento PDF
-          </a>
-        </article>
-        <!-- Tarjeta 4 -->
-        <article class="document-card">
-          <div class="card-preview-box" role="button" tabindex="0" aria-label="Abrir documento en visor">
-            <canvas class="card-preview-canvas" role="img" aria-label="Vista previa de la primera página del documento"></canvas>
-          </div>
-          <h3 class="card-title">Proyecto de construcción de la casa del club</h3>
-          <div class="card-details">
-            <p>Planos y especificaciones del proyecto</p>
-            <p>1996</p>
-            <p>Documentos relacionados con la construcción</p>
-          </div>
-          <a href="pdf/PROYECTO-CONSTRUCCION CASA CLUB 1996.pdf" class="card-pdf-link" target="_blank" rel="noopener noreferrer" aria-label="Consultar documento PDF">
-            Ver documento PDF
-          </a>
-        </article>
-        <!-- Tarjeta 5 -->
-        <article class="document-card">
-          <div class="card-preview-box" role="button" tabindex="0" aria-label="Abrir documento en visor">
-            <canvas class="card-preview-canvas" role="img" aria-label="Vista previa de la primera página del documento"></canvas>
-          </div>
-          <h3 class="card-title">Carta en contra de los despidos injustificados</h3>
-          <div class="card-details">
-            <p>Carta dirigida a la administración universitaria</p>
-            <p>25 de Agosto 2005</p>
-            <p>Proclamación en contra de los despidos injustificados</p>
-          </div>
-          <a href="pdf/CARTA EN CONTRA DE LOS DESPIDOS INJUSTIFICADOS.pdf" class="card-pdf-link" target="_blank" rel="noopener noreferrer" aria-label="Consultar documento PDF">
-            Ver documento PDF
-          </a>
-        </article>
-        <!-- Tarjeta 6 -->
-        <article class="document-card">
-          <div class="card-preview-box" role="button" tabindex="0" aria-label="Abrir documento en visor">
-            <canvas class="card-preview-canvas" role="img" aria-label="Vista previa de la primera página del documento"></canvas>
-          </div>
-          <h3 class="card-title">Acuerdo de convenio sobre prestaciones IMSS-UAQ</h3>
-          <div class="card-details">
-            <p>Acuerdo entre IMSS y UAQ sobre prestaciones</p>
-            <p>10 de Marzo 2006</p>
-            <p>Detalles y condiciones del convenio</p>
-          </div>
-          <a href="pdf/ACUERDO CONVENIO SOBRE PRESTACIONES IMSS-UAQ.pdf" class="card-pdf-link" target="_blank" rel="noopener noreferrer" aria-label="Consultar documento PDF">
-            Ver documento PDF
-          </a>
-        </article>
+      <div class="documents-grid" id="documentsGrid">
+        <!-- Las cartas se generan dinámicamente mediante el constructor DocumentCard desde data/documentos.json -->
       </div>
     </section>
   </main>
@@ -184,12 +95,21 @@
 
   <!-- Vistas previas con PDF.js -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+
+  <!-- Constructor de cartas y gestor de carga JSON -->
+  <script src="js/constructor-cartas.js"></script>
+
+  <!-- Inicialización de la galería, vistas previas y visor modal -->
   <script>
     pdfjsLib.GlobalWorkerOptions.workerSrc =
       'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
 
+    // Función para renderizar la primera página del PDF en el canvas
     async function renderPreview(canvas) {
-      const link = canvas.closest('.document-card').querySelector('.card-pdf-link');
+      const card = canvas.closest('.document-card');
+      if (!card) return;
+      const link = card.querySelector('.card-pdf-link');
+      if (!link) return;
       const url = link.getAttribute('href');
 
       try {
@@ -212,6 +132,7 @@
       }
     }
 
+    // Observador para generar vistas previas perezosas (lazy loading)
     const previewObserver = new IntersectionObserver((entries, obs) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
@@ -221,27 +142,34 @@
       });
     }, { rootMargin: '200px' });
 
-    document.querySelectorAll('.card-preview-canvas').forEach(c => previewObserver.observe(c));
-  </script>
+    // Observar los canvas generados automáticamente
+    function observarVistasPrevias() {
+      document.querySelectorAll('.card-preview-canvas').forEach(c => previewObserver.observe(c));
+    }
 
-  <!-- Visor modal -->
-  <script>
+    // Escuchar el evento cuando el constructor termine de renderizar las cartas
+    document.addEventListener('cartasRenderizadas', observarVistasPrevias);
+
+    // Visor modal
     (function () {
       const modal = document.getElementById('pdfModal');
       const frame = document.getElementById('pdfModalFrame');
       const title = document.getElementById('pdfModalTitle');
       const openLink = document.getElementById('pdfModalOpen');
       const closeBtn = document.getElementById('pdfModalClose');
+      const grid = document.getElementById('documentsGrid');
       let lastTrigger = null;
 
-      // En pantallas táctiles pequeñas el visor integrado de PDF suele funcionar mal:
-      // ahí se deja el comportamiento original (abrir en pestaña nueva).
+      // En pantallas táctiles pequeñas el visor integrado suele funcionar mal:
+      // se abre directamente en pestaña nueva.
       const useModal = () => !window.matchMedia('(max-width: 640px)').matches
         && typeof modal.showModal === 'function';
 
       function openViewer(card, trigger) {
-        const href = card.querySelector('.card-pdf-link').getAttribute('href');
-        const cardTitle = card.querySelector('.card-title').textContent.trim();
+        const link = card.querySelector('.card-pdf-link');
+        const href = link ? link.getAttribute('href') : '';
+        const cardTitleEl = card.querySelector('.card-title');
+        const cardTitle = cardTitleEl ? cardTitleEl.textContent.trim() : '';
         const fileName = decodeURIComponent(href.split('/').pop());
 
         lastTrigger = trigger;
@@ -270,29 +198,110 @@
         if (e.target === modal) closeViewer();
       });
 
-      document.querySelectorAll('.document-card').forEach(card => {
-        const link = card.querySelector('.card-pdf-link');
-        const box = card.querySelector('.card-preview-box');
+      // Delegación de eventos para las cartas creadas dinámicamente
+      if (grid) {
+        grid.addEventListener('click', e => {
+          const link = e.target.closest('.card-pdf-link');
+          const box = e.target.closest('.card-preview-box');
+          const card = e.target.closest('.document-card');
 
-        link.addEventListener('click', e => {
-          if (!useModal()) return; // deja que el enlace abra la pestaña nueva
-          e.preventDefault();
-          openViewer(card, link);
-        });
+          if (!card) return;
 
-        box.addEventListener('click', () => {
-          if (useModal()) openViewer(card, box);
-          else window.open(link.href, '_blank', 'noopener');
-        });
-
-        box.addEventListener('keydown', e => {
-          if (e.key === 'Enter' || e.key === ' ') {
+          if (link) {
+            if (!useModal()) return; // abre enlace normalmente
             e.preventDefault();
-            box.click();
+            openViewer(card, link);
+          } else if (box) {
+            const cardLink = card.querySelector('.card-pdf-link');
+            if (useModal()) openViewer(card, box);
+            else if (cardLink) window.open(cardLink.href, '_blank', 'noopener');
           }
         });
-      });
+
+        grid.addEventListener('keydown', e => {
+          if (e.key === 'Enter' || e.key === ' ') {
+            const box = e.target.closest('.card-preview-box');
+            if (box) {
+              e.preventDefault();
+              box.click();
+            }
+          }
+        });
+      }
     })();
+
+    // Datos iniciales de respaldo por si el usuario abre directamente con file:/// (sin servidor web)
+    const documentosFallback = [
+      {
+        "id": 1,
+        "titulo": "Registro de SUPAUAQ en el IMSS",
+        "detalles": [
+          "Registro del sindicato en el IMSS",
+          "1975",
+          "Contiene el proceso y constancias de la affiliación"
+        ],
+        "pdf": "pdf/registro-imss.pdf"
+      },
+      {
+        "id": 2,
+        "titulo": "Selección de plazas",
+        "detalles": [
+          "Proceso de selección de plazas SUPAUAQ",
+          "6 de Octubre 2004",
+          "Requerimientos y consideraciones para el proceso de selección"
+        ],
+        "pdf": "pdf/seleccion-plazas.pdf"
+      },
+      {
+        "id": 3,
+        "titulo": "Revisión de contrato colectivo",
+        "detalles": [
+          "Revisión del contrato colectivo de trabajo",
+          "13 de febrero 2017",
+          "Modificaciones y actualizaciones al contrato"
+        ],
+        "pdf": "pdf/revision-contrato-colectivo.pdf"
+      },
+      {
+        "id": 4,
+        "titulo": "Proyecto de construcción de la casa del club",
+        "detalles": [
+          "Planos y especificaciones del proyecto",
+          "1996",
+          "Documentos relacionados con la construcción"
+        ],
+        "pdf": "pdf/PROYECTO-CONSTRUCCION CASA CLUB 1996.pdf"
+      },
+      {
+        "id": 5,
+        "titulo": "Carta en contra de los despidos injustificados",
+        "detalles": [
+          "Carta dirigida a la administración universitaria",
+          "25 de Agosto 2005",
+          "Proclamación en contra de los despidos injustificados"
+        ],
+        "pdf": "pdf/CARTA EN CONTRA DE LOS DESPIDOS INJUSTIFICADOS.pdf"
+      },
+      {
+        "id": 6,
+        "titulo": "Acuerdo de convenio sobre prestaciones IMSS-UAQ",
+        "detalles": [
+          "Acuerdo entre IMSS y UAQ sobre prestaciones",
+          "10 de Marzo 2006",
+          "Detalles y condiciones del convenio"
+        ],
+        "pdf": "pdf/ACUERDO CONVENIO SOBRE PRESTACIONES IMSS-UAQ.pdf"
+      }
+    ];
+
+    // Instanciar el constructor de la galería y cargar desde el JSON
+    const galeria = new GaleriaDocumentos({
+      contenedor: '#documentsGrid',
+      jsonUrl: 'data/documentos.json',
+      datosRespaldo: documentosFallback
+    });
+
+    galeria.inicializar();
   </script>
 </body>
 </html>
