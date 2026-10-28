@@ -1,0 +1,62 @@
+[
+  {
+    "id": 1,
+    "titulo": "Registro de SUPAUAQ en el IMSS",
+    "detalles": [
+      "Registro del sindicato en el IMSS",
+      "1975",
+      "Contiene el proceso y constancias de la affiliación"
+    ],
+    "pdf": "pdf/registro-imss.pdf"
+  },
+  {
+    "id": 2,
+    "titulo": "Selección de plazas",
+    "detalles": [
+      "Proceso de selección de plazas SUPAUAQ",
+      "6 de Octubre 2004",
+      "Requerimientos y consideraciones para el proceso de selección"
+    ],
+    "pdf": "pdf/seleccion-plazas.pdf"
+  },
+  {
+    "id": 3,
+    "titulo": "Revisión de contrato colectivo",
+    "detalles": [
+      "Revisión del contrato colectivo de trabajo",
+      "13 de febrero 2017",
+      "Modificaciones y actualizaciones al contrato"
+    ],
+    "pdf": "pdf/revision-contrato-colectivo.pdf"
+  },
+  {
+    "id": 4,
+    "titulo": "Proyecto de construcción de la casa del club",
+    "detalles": [
+      "Planos y especificaciones del proyecto",
+      "1996",
+      "Documentos relacionados con la construcción"
+    ],
+    "pdf": "pdf/PROYECTO-CONSTRUCCION CASA CLUB 1996.pdf"
+  },
+  {
+    "id": 5,
+    "titulo": "Carta en contra de los despidos injustificados",
+    "detalles": [
+      "Carta dirigida a la administración universitaria",
+      "25 de Agosto 2005",
+      "Proclamación en contra de los despidos injustificados"
+    ],
+    "pdf": "pdf/CARTA EN CONTRA DE LOS DESPIDOS INJUSTIFICADOS.pdf"
+  },
+  {
+    "id": 6,
+    "titulo": "Acuerdo de convenio sobre prestaciones IMSS-UAQ",
+    "detalles": [
+      "Acuerdo entre IMSS y UAQ sobre prestaciones",
+      "10 de Marzo 2006",
+      "Detalles y condiciones del convenio"
+    ],
+    "pdf": "pdf/ACUERDO CONVENIO SOBRE PRESTACIONES IMSS-UAQ.pdf"
+  }
+]
