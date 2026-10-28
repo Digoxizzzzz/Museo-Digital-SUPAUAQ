@@ -58,5 +58,45 @@
       "Detalles y condiciones del convenio"
     ],
     "pdf": "pdf/ACUERDO CONVENIO SOBRE PRESTACIONES IMSS-UAQ.pdf"
+  },
+  {
+    "id": 7,
+    "titulo": "Constitucion del primer contrato colectivo de SUPAUAQ",
+    "detalles": [
+      "Constitucion del ccontrato colectivo de trabajo",
+      "17 de febrero de 1974",
+      "Bases de la constitución del primer contrato colectivo de trabajo"
+    ],
+    "pdf": "pdf/Constitucion-primer-contrato-colectivo.pdf"
+  },
+  {
+    "id": 8,
+    "titulo": "Convenio con Rectoria ",
+    "detalles": [
+      "Convenio celebrado, pactos y acuerdos con Rectoria",
+      "6 de febrero de 1995",
+      "Informe de relaciones laborales y derechos de los trabajadores."
+    ],
+    "pdf": "pdf/convenio-rectoria.pdf"
+  },
+  {
+    "id": 9,
+    "titulo": "Estatutos del sindicato SUPAUAQ",
+    "detalles": [
+      "Estatutos del sindicato SUPAUAQ",
+      "1974",
+      "Documentos que regulan la estructura y funcionamiento del sindicato"
+    ],
+    "pdf": "pdf/estatutos-SUPAUAQ.pdf"
+  },
+  {
+    "id": 10,
+    "titulo": "Principios generales del sindicato SUPAUAQ",
+    "detalles": [
+      "Principios que rigen el funcionamiento del sindicato",
+      "1974",
+      "Documentos que establecen los valores y directrices del sindicato"
+    ],
+    "pdf": "pdf/principios-generales-SUPAUAQ.pdf"
   }
 ]
