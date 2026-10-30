@@ -84,7 +84,7 @@
     "titulo": "Estatutos del sindicato SUPAUAQ",
     "detalles": [
       "Estatutos del sindicato SUPAUAQ",
-      "1974",
+      "Enero 1975",
       "Documentos que regulan la estructura y funcionamiento del sindicato"
     ],
     "pdf": "pdf/estatutos-supauaq.pdf"
@@ -97,6 +97,56 @@
       "1974",
       "Documentos que establecen los valores y directrices del sindicato"
     ],
-    "pdf": "pdf/ACUERDO CONVENIO SOBRE PRESTACIONES IMSS-UAQ.pdf"
+    "pdf": "pdf/principios-generales-supauaq.pdf"
+  },
+  {
+    "id": 11,
+    "titulo": "Estatutos del sindicato SUPAUAQ",
+    "detalles": [
+      "Estatutos del sindicato SUPAUAQ",
+      "15 Mayo 1975",
+      "Documentos que regulan la estructura y funcionamiento del sindicato"
+    ],
+    "pdf": "pdf/estatutos-supauaq-15mayo76.pdf"
+  },
+  {
+    "id": 12,
+    "titulo": "Modificación del nombre del sindicato SUPAUAQ",
+    "detalles": [
+      "Documento de explicación de la modificación del nombre del sindicato",
+      "7 Diciembre 1974",
+      "Detalles de la modificación del nombre del sindicato de SUPAEBUAQ a SUPAUAQ"
+    ],
+    "pdf": "pdf/modificacion-sindicato.pdf"
+  },
+  {
+    "id": 13,
+    "titulo": "Proyecto de Estatutos de Profesores Universitarios de Querétaro",
+    "detalles": [
+      "Primera redacción de estatutos de profesores de la UAQ como asociación",
+      "1974",
+      "Primera redacción de estatutos de profesores de la UAQ como asociación"
+    ],
+    "pdf": "pdf/PROYECTO-ESTATUTOS-PROFESORES-UNIVERSITARIOSQUERETARO.pdf"
+  },
+  {
+    "id": 14,
+    "titulo": "Registro oficial de la SUPAUAQ",
+    "detalles": [
+      "Registro de de la SUPAUAQ ante el Tribunal del Trabajo",
+      "12 Marzo 1975",
+      "Documento de registro oficial del sindicato"
+    ],
+    "pdf": "pdf/registro-sindicato.pdf"
+  },
+  {
+    "id": 15,
+    "titulo": "Primer Asamblea Electoral",
+    "detalles": [
+      "Elección de Comité Ejecutivo de la SUPAUAQ",
+      "23 Octubre 2024",
+      "Asamblea para elección de Comité Ejecutivo de la SUPAUAQ"
+    ],
+    "pdf": "pdf/primer-asamblea-electoral-2024.pdf"
   }
 ]
